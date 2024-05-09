@@ -1,8 +1,9 @@
 import { Patient } from "fhir/r4";
+import React from "react";
 import { patients } from "../utils/examples";
 import Button from "./Button";
 
-export default function Selection({
+export const MemoSelection = React.memo(function Selection({
   setPatient,
 }: {
   setPatient: React.Dispatch<React.SetStateAction<Patient>>;
@@ -14,4 +15,4 @@ export default function Selection({
       ))}
     </div>
   );
-}
+});

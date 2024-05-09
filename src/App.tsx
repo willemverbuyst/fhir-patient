@@ -2,7 +2,7 @@ import { Patient } from "fhir/r4";
 import { useState } from "react";
 import "./App.css";
 import Card from "./components/Card";
-import Selection from "./components/Selection";
+import { MemoSelection } from "./components/Selection";
 import { patients } from "./utils/examples";
 
 function App() {
@@ -10,7 +10,7 @@ function App() {
 
   return (
     <section>
-      <Selection setPatient={setPatient} />
+      <MemoSelection setPatient={setPatient} />
       <Card patient={patient} />
     </section>
   );
