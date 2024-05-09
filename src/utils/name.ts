@@ -16,5 +16,5 @@ export function formatName(name: HumanName[] | undefined) {
     })
     .join(" - ");
 
-  return formatedName;
+  return formatedName.trim();
 }
