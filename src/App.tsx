@@ -10,6 +10,7 @@ function App() {
 
   return (
     <section>
+      <h1>Patients</h1>
       <MemoSelection setPatient={setPatient} />
       <Card patient={patient} />
     </section>
