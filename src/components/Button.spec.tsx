@@ -15,6 +15,7 @@ test("Button should contain caption and handle click event and have white backgr
       selected
     />
   );
+
   await expect(component).toContainText("FooBar");
   await expect(component).toHaveClass("button-selected");
   await component.click();
@@ -28,6 +29,7 @@ test("Button should contain caption and have purple background", async ({
   const component = await mount(
     <Button caption="FooBar" handleClick={() => {}} selected={false} />
   );
+
   await expect(component).toContainText("FooBar");
   await expect(component).toHaveClass("button-not-selected");
 });
