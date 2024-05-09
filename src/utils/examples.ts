@@ -4,5 +4,5 @@ import patient2 from "../../examples/patient_2.json";
 import patient3 from "../../examples/patient_3.json";
 
 export const patients = { patient1, patient2, patient3 } as {
-  [key: string]: Patient;
+  [P in "patient1" | "patient2" | "patient3"]: Patient;
 };

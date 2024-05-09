@@ -1,18 +1,26 @@
-import { Patient } from "fhir/r4";
 import React from "react";
 import { patients } from "../utils/examples";
 import Button from "./Button";
 
-export const MemoSelection = React.memo(function Selection({
+export default function Selection({
+  patient,
   setPatient,
 }: {
-  setPatient: React.Dispatch<React.SetStateAction<Patient>>;
+  patient: keyof typeof patients;
+  setPatient: React.Dispatch<React.SetStateAction<keyof typeof patients>>;
 }) {
+  const keys = Object.keys(patients) as (keyof typeof patients)[];
+
   return (
     <div style={{ display: "flex", gap: "1rem", justifyContent: "center" }}>
-      {Object.entries(patients).map(([k, v]) => (
-        <Button key={k} handleClick={() => setPatient(v)} caption={k} />
+      {keys.map((k) => (
+        <Button
+          key={k}
+          handleClick={() => setPatient(k)}
+          caption={k}
+          selected={patient === k}
+        />
       ))}
     </div>
   );
-});
+}
