@@ -14,7 +14,7 @@ export default function Card({ patient }: { patient: Patient }) {
         color: "#242424",
       }}
     >
-      <h3>{formatName(patient.name)}</h3>
+      <h3>{formatName(patient.name).trim()}</h3>
       <p>{patient.birthDate}</p>
       <p>{patient.gender}</p>
     </div>
