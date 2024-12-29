@@ -5,7 +5,7 @@ export function formatName(name: HumanName[] | undefined) {
     return "";
   }
 
-  const formatedName = name
+  const formattedName = name
     .map((i) => {
       const { given = [], family, suffix } = i;
 
@@ -16,5 +16,5 @@ export function formatName(name: HumanName[] | undefined) {
     })
     .join(" - ");
 
-  return formatedName.trim();
+  return formattedName.trim();
 }
